@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Store Computer A</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: linear-gradient(to bottom right, #e3f2fd, #f8f9fa); 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+      }
+      
+      .header-title {
+        color: #d32f2f; 
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+
+      .navbar-custom {
+        background-color: #0d6efd;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        position: sticky; 
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar-custom .nav-link {
+        color: #ffffff !important;
+        padding: 10px 15px;
+        transition: 0.3s;
+      }
+      .navbar-custom .nav-link:hover, .navbar-custom .nav-link.active {
+        background-color: #0b5ed7;
+        border-radius: 5px;
+      }
+
+      .product-box {
+        background-color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        padding: 20px 15px;
+        margin-bottom: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .product-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      }
+
+      .product-box img {
+        max-height: 140px;
+        object-fit: contain;
+        margin: 0 auto 15px auto;
+        transition: transform 0.3s ease; 
+      }
+
+      .product-box:hover img {
+        transform: scale(1.1) translateY(-5px);
+      }
+
+      .product-price {
+        color: #dc3545;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-top: 10px;
+        margin-bottom: 15px;
+      }
+
+      .sidebar-box {
+        background-color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      }
+
+      .banner-img, .sidebar-img {
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .banner-img:hover, .sidebar-img:hover {
+        transform: scale(1.02) translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
+      }
+
+      .footer {
+        background-color: #212529;
+        color: #ffffff;
+        border-radius: 12px 12px 0 0;
+        padding: 25px 0;
+        text-align: center;
+        margin-top: 30px;
+      }
+      
+      .scroll-margin {
+        scroll-margin-top: 80px; 
+      }
+    </style>
+  </head>
+  <body>
+
+  <div class="container mt-4">
+
+    <div class="row align-items-center mb-3">
+      <div class="col-md-7">
+        <h2 class="header-title mb-0">TECH STORE</h2>
+      </div>
+      <div class="col-md-5">
+        <form class="d-flex justify-content-end">
+          <input class="form-control me-2" type="text" placeholder="Tìm kiếm sản phẩm..." style="max-width: 250px;">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm navbar-light navbar-custom mb-4">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link fw-bold active" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#">INTRODUCTION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#computer">COMPUTER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#phone">MOBILE PHONE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#tablet">TABLET</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#accessory">ACCESSORY</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row mb-4">
+      <div class="col-md-9">
+        <img src="image/banner.jpg" class="img-fluid w-100 banner-img shadow-sm" alt="Banner Store" style="object-fit: cover; height: 100%;">
+      </div>
+      <div class="col-md-3">
+        <div class="sidebar-box h-100 d-flex flex-column justify-content-center">
+          <h5 class="fw-bold text-center mb-3">Tin tức & Khuyến mãi</h5>
+          <img src="Sidebar.jpg" alt="Promo" class="img-fluid w-100 sidebar-img">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-9">
+        
+        <div id="computer" class="d-flex justify-content-between align-items-center mb-3 scroll-margin">
+          <h4 class="fw-bold mb-0 text-primary">💻 Laptop Nổi Bật</h4>
+          <a href="#" class="text-decoration-none">Xem tất cả ></a>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="lenovo.jpg" class="img-fluid" alt="Laptop Lenovo">
+              <h6 class="mb-0 fw-semibold">Laptop Lenovo IdeaPad</h6>
+              <div class="product-price">15.490.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="dell.jpg" class="img-fluid" alt="Laptop Dell">
+              <h6 class="mb-0 fw-semibold">Laptop Dell Inspiron</h6>
+              <div class="product-price">17.990.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="msi.jpg" class="img-fluid" alt="Laptop MSI">
+              <h6 class="mb-0 fw-semibold">Laptop MSI Gaming</h6>
+              <div class="product-price">21.000.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="hp.jpg" class="img-fluid" alt="Laptop HP">
+              <h6 class="mb-0 fw-semibold">Laptop HP Pavilion</h6>
+              <div class="product-price">16.200.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4 text-muted">
+
+        <div id="phone" class="d-flex justify-content-between align-items-center mb-3 scroll-margin">
+          <h4 class="fw-bold mb-0 text-success">📱 Điện Thoại Mới Nhất</h4>
+          <a href="#" class="text-decoration-none">Xem tất cả ></a>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="iphone.jpg" class="img-fluid" alt="iPhone">
+              <h6 class="mb-0 fw-semibold">iPhone 15 Pro Max</h6>
+              <div class="product-price">29.990.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="samsung.jpg" class="img-fluid" alt="Samsung">
+              <h6 class="mb-0 fw-semibold">Samsung Galaxy S24</h6>
+              <div class="product-price">22.500.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="oppo.jpg" class="img-fluid" alt="Oppo">
+              <h6 class="mb-0 fw-semibold">Oppo Reno 11</h6>
+              <div class="product-price">10.990.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="redmi.jpg" class="img-fluid" alt="Redmi">
+              <h6 class="mb-0 fw-semibold">Xiaomi Redmi Note 13</h6>
+              <div class="product-price">5.490.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4 text-muted">
+
+        <div id="tablet" class="d-flex justify-content-between align-items-center mb-3 scroll-margin">
+          <h4 class="fw-bold mb-0 text-warning">📟 Máy Tính Bảng</h4>
+          <a href="#" class="text-decoration-none">Xem tất cả ></a>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="ipad.jpg" class="img-fluid" alt="iPad">
+              <h6 class="mb-0 fw-semibold">iPad Pro M4</h6>
+              <div class="product-price">25.990.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="galaxy-tab.jpg" class="img-fluid" alt="Galaxy Tab">
+              <h6 class="mb-0 fw-semibold">Galaxy Tab S9</h6>
+              <div class="product-price">19.500.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="xiaomi-pad.jpg" class="img-fluid" alt="Xiaomi Pad">
+              <h6 class="mb-0 fw-semibold">Xiaomi Pad 6</h6>
+              <div class="product-price">8.990.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="lenovo-tab.jpg" class="img-fluid" alt="Lenovo Tab">
+              <h6 class="mb-0 fw-semibold">Lenovo Tab P11</h6>
+              <div class="product-price">6.490.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4 text-muted">
+
+        <div id="accessory" class="d-flex justify-content-between align-items-center mb-3 scroll-margin">
+          <h4 class="fw-bold mb-0 text-info">🎧 Phụ Kiện</h4>
+          <a href="#" class="text-decoration-none">Xem tất cả ></a>
+        </div>
+        <div class="row g-3">
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="airpods.jpg" class="img-fluid" alt="Tai nghe">
+              <h6 class="mb-0 fw-semibold">AirPods Pro 2</h6>
+              <div class="product-price">5.990.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="mouse.jpg" class="img-fluid" alt="Chuột">
+              <h6 class="mb-0 fw-semibold">Logitech MX Master 3S</h6>
+              <div class="product-price">2.500.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="keyboard.jpg" class="img-fluid" alt="Bàn phím">
+              <h6 class="mb-0 fw-semibold">Bàn phím cơ Keychron</h6>
+              <div class="product-price">1.890.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="product-box">
+              <img src="charger.jpg" class="img-fluid" alt="Sạc">
+              <h6 class="mb-0 fw-semibold">Sạc nhanh Anker 65W</h6>
+              <div class="product-price">850.000 ₫</div>
+              <button class="btn btn-outline-primary btn-sm w-100">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-3">
+        <div class="sidebar-box mt-5">
+          <h5 class="fw-bold border-bottom pb-2 mb-3">Đối tác liên kết</h5>
+          <ul class="list-unstyled mb-0">
+            <li class="py-2"><a href="#" class="text-decoration-none text-dark fw-medium">➤ Cửa hàng Store A</a></li>
+            <li><hr class="my-1 text-muted"></li>
+            <li class="py-2"><a href="#" class="text-decoration-none text-dark fw-medium">➤ Cửa hàng Store B</a></li>
+            <li><hr class="my-1 text-muted"></li>
+            <li class="py-2"><a href="#" class="text-decoration-none text-dark fw-medium">➤ Trung tâm bảo hành</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer mt-5">
+      <h5 class="fw-bold mb-2">TECH STORE - UY TÍN LÀM NÊN THƯƠNG HIỆU</h5>
+    </div>
+  </div>
+  </body>
+</html>
